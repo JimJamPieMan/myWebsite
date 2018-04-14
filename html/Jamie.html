@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<title>myWebsite - Jamie</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Roboto", sans-serif;
+    }
+
+    .w3-sidebar {
+        z-index: 3;
+        width: 250px;
+        top: 43px;
+        bottom: 0;
+        height: inherit;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="../index.html" class="w3-bar-item w3-button w3-theme-l1">myWebsite</a>
+            <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Java</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">JavaScript</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">html</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">node.js</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">css</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">about</a> -->
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large"
+            title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item">
+            <b>Menu</b>
+        </h4>
+
+        <a class="w3-bar-item w3-button w3-hover-black" href="java.html">Java</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="javascript.html">JavaScript</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="html.html">html</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="node.js.html">node.js</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="#">jamie.html</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="css.html">css</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="about.html">about</a>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main" style="margin-left:250px">
+
+
+        <table>
+            <tr>
+                <td>feedback &lt;feedback message&gt;</td>
+                <td>
+                    <span>sends james some feedback to his personal email adress </span>
+                    <s>hahahahahahahahahahah</s>
+                    <span >whoops</span>
+                </td>
+            </tr>
+            <tr>
+                <td>info</td>
+                <td>
+                    <span >gives a little bit of info on the piece of shit that is this bot</span>
+                </td>
+            </tr>
+            <tr>
+                <td>poll &lt;question ending in ?&gt;</td>
+                <td>
+                    <span >fucking democracy in action</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>botfriends</p>
+                </td>
+                <td>
+                    <span >shows you all my friends who are bots</span>
+                </td>
+            </tr>
+            <tr>
+                <td>github</td>
+                <td>
+                    <span >gives a link to the github page for the bot</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span >invite</span>
+                </td>
+                <td>sends an oauth2 link for the bot</td>
+            </tr>
+            <tr>
+                <td>ping</td>
+                <td>the classic ping command</td>
+            </tr>
+            <tr>
+                <td>nsfwvid &lt;search term&gt;</td>
+                <td>
+                    <span >you fucking degenerates (!!can only be done in a channel marked as 'nsfw' or containing the word 'nsfw'!!)</span>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>nsfwgif &lt;search term&gt;</td>
+                <td>
+                    <span >you fucking degenerates. but now in gifs! (!!can only be done in a channel marked as 'nsfw' or containing the
+                        word 'nsfw'!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span >rule34 &lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;</span>
+                    <br>
+                </td>
+                <td>
+                    <span >i think we all know what this one does. (usage: rule34 &lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;) tags 2 &amp; 3
+                        are optional but 1 must be there (!!can only be done in a channel marked as 'nsfw' or containing the word
+                        'nsfw'!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>volume &lt;volume to set&gt;</td>
+                <td>sets the volume for the bot, what the fuck else were you thinking</td>
+            </tr>
+            <tr>
+                <td>showconf</td>
+                <td>shows the volume for the server because people might want to know that</td>
+            </tr>
+            <tr>
+                <td>gtfo</td>
+                <td>makes the bot leave the channel</td>
+            </tr>
+            <tr>
+                <td>play &lt;youtube url || search term&gt;</td>
+                <td>plays either a youtube url or searches youtube and plays what it finds</td>
+            </tr>
+            <tr>
+                <td>skip</td>
+                <td>skips the song currently playing</td>
+            </tr>
+            <tr>
+                <td>stop</td>
+                <td>skips all songs and leaves the channel</td>
+            </tr>
+            <tr>
+                <td>pause</td>
+                <td>pauses the current stream</td>
+            </tr>
+            <tr>
+                <td>resume</td>
+                <td>resumes the current stream</td>
+            </tr>
+            <tr>
+                <td>fuck</td>
+                <td>moves the user to another random channel</td>
+            </tr>
+            <tr>
+                <td>fuckoff&lt;@person&gt;</td>
+                <td>moves the tagged user to another random channel
+                    <span >(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>mute &lt;@person&gt;</td>
+                <td>mutes tagged user in the current text channel
+                    <span >(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>unmute&lt;@person&gt;</td>
+                <td>unmutes tagged user in the current text channel
+                    <span >(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <span >creates a role based on values given (!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>rolecolours</td>
+                <td>
+                    <span >shows all the colours that roles can be. of course you can also use hex values</span>
+                </td>
+            </tr>
+            <tr>
+                <td>addroll &lt;@role&gt;</td>
+                <td>
+                    <span >adds the user to a roll given and the grantableroles list</span>
+                </td>
+            </tr>
+            <tr>
+                <td>deleterole &lt;@role&gt;</td>
+                <td>
+                    <span >(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>listroles</td>
+                <td>
+                    <span >gets a list of grantable roles in the server.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>removerole&lt;@role&gt;</td>
+                <td>
+                    <span >removes the role given.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>addgrantablerole&lt;@role&gt;</td>
+                <td>
+                    <span >adds a created role to a list of roles addable by a user (!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>removegrantablerole&lt;@role&gt;</td>
+                <td>
+                    <span >removes a created role to a list of roles addable by a user (!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>halloween</td>
+                <td>
+                    <span >holy shit halloween is this year</span>
+                </td>
+            </tr>
+            <tr>
+                <td>funnysexthing</td>
+                <td>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>kelsey</td>
+                <td>barb coo</td>
+            </tr>
+            <tr>
+                <td>texttoascii &lt;text&gt;</td>
+                <td>
+                    <span >i was tryna do an image to ascii but it didnt work so i settled for this</span>
+                </td>
+            </tr>
+            <tr>
+                <td>tweet</td>
+                <td>
+                    <span >it sends a tweet from the account </span>
+                    <a title="https://twitter.com/jamiebottweets1" href="https://twitter.com/jamiebottweets1"
+                        target="_blank" rel="noreferrer noopener" >https://twitter.com/jamiebottweets1</a>
+                    <span >. why? i actual have no fucking idea lol (only works in a specific server, sorry about that)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>jack</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>test</td>
+                <td>beep boop</td>
+            </tr>
+            <tr>
+                <td>pupper</td>
+                <td>
+                    <span >finds a random pupper (thanks @kelsey)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>kitty</td>
+                <td>
+                    <span >everytime you type it you get a cat but its the shittest api ever but now its a little better</span>
+                </td>
+            </tr>
+            <tr>
+                <td>bob</td>
+                <td>
+                    <span >sneds a pic of bob the builder because why the fuck not</span>
+                </td>
+            </tr>
+            <tr>
+                <td>manesh</td>
+                <td>
+                    <span >manesh^5</span>
+                </td>
+            </tr>
+            <tr>
+                <td>avatar</td>
+                <td>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>men</td>
+                <td>
+                    <span >our server got weird there for sec</span>
+                </td>
+            </tr>
+            <tr>
+                <td>shopper</td>
+                <td>
+                    <span >one of my friends wanted a random shopper command</span>
+                </td>
+            </tr>
+            <tr>
+                <td>img &lt;search term&gt;</td>
+                <td>
+                    <span >searches the googles for an imageles</span>
+                </td>
+            </tr>
+            <tr>
+                <td>sbubbby</td>
+                <td>
+                    <span >eef freef</span>
+                </td>
+            </tr>
+            <tr>
+                <td>bentley</td>
+                <td>sends a picture of the devs friends dog</td>
+            </tr>
+            <tr>
+                <td>maggie</td>
+                <td>sends a picture of the devs dog</td>
+            </tr>
+            <tr>
+                <td>freedom</td>
+                <td>
+                    <span >fuck yeah freedom 'murica</span>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>elf</td>
+                <td>
+                    <span >the elf on the shelf meme but shit</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span >meme &lt;can be left blank or use a search term&gt;</span>
+                    <br>
+                </td>
+                <td>
+                    <span >gets a meme but yet again another shit api</span>
+                </td>
+            </tr>
+            <tr>
+                <td>prefix &lt;new prefix&gt;</td>
+                <td>changes the prefix
+                    <span >(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>nonptoggle</td>
+                <td>
+                    <span >
+                        <span>
+                            <span>stops dem annoying non-prefixed commands</span>
+                        </span>
+                        <span> (hmm, haha, fuck me, ur mom gay) </span>(!!requires 'rue brick' role!!)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>@jamie#6832 prefix</td>
+                <td>gives the servers current prefix</td>
+            </tr>
+            <tr>
+                <td>allservermessage</td>
+                <td>haahaahhhahaahhaaha no</td>
+            </tr>
+            <tr>
+                <td>enmaprefresh</td>
+                <td>haahaahhhahaahhaaha no</td>
+            </tr>
+            <tr>
+                <td>eval</td>
+                <td>haahaahhhahaahhaaha no</td>
+            </tr>
+        </table>
+
+       
+
+        <footer id="myFooter">
+            <div class="w3-container w3-theme-l2 w3-padding-32">
+                <h4>Footer</h4>
+            </div>
+
+            <div class="w3-container w3-theme-l1">
+                <p>Powered by
+                    <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+                </p>
+            </div>
+        </footer>
+
+        <!-- END MAIN -->
+    </div>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
