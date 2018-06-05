@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <head>
 <title>myWebsite - Jamie</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
 <style>
     html,
     body,
@@ -42,8 +45,11 @@
         bottom: 0;
         height: inherit;
     }
+  .serverTitle{
+  width:100%;
+  }
 </style>
-
+  </head>
 <body>
 
     <!-- Navbar -->
@@ -89,7 +95,7 @@
 
 <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-        <h1 class="w3-text-teal">Commands for Jamie</h1>
+        <h1 class="w3-text-teal" id="serverTitle"></h1>
         <table class="commandTable">
 
             <tr>
@@ -99,6 +105,24 @@
                 <th>
                     Information
                 </th>
+            </tr>
+          <tr>
+                <td>warn &lt;@mention&gt; &lt;reason&gt;</td>
+                <td>
+                    <span>warns the mentioned person. after 3 warns, they will be kicked. after 6 warns they will be banned</span>
+                </td>
+            </tr>
+          <tr>
+                <td>revokewarn&lt;warn id&gt;</td>
+                <td>
+                    <span>revokes a warn</span>
+                </td>
+            </tr>
+          <tr>
+                <td>servericon&lt;image url&gt;</td>
+                <td>
+                    <span>the server i hang out in is the bbibggest fucking meme ever</span>
+                </td>
             </tr>
             <tr>
                 <td>feedback &lt;feedback message&gt;</td>
@@ -121,9 +145,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <p>botfriends</p>
-                </td>
+                <td>botfriends</td>
                 <td>
                     <span >shows you all my friends who are bots</span>
                 </td>
@@ -135,9 +157,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <span >invite</span>
-                </td>
+                <td>invite</td>
                 <td>sends an oauth2 link for the bot</td>
             </tr>
             <tr>
@@ -159,10 +179,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <span >rule34 &lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;</span>
-                    <br>
-                </td>
+                <td>rule34 &lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;</td>
                 <td>
                     <span >i think we all know what this one does. (usage: rule34 &lt;tag1&gt; &lt;tag2&gt; &lt;tag3&gt;) tags 2 &amp; 3
                         are optional but 1 must be there (!!can only be done in a channel marked as 'nsfw' or containing the word
@@ -224,9 +241,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    createrole
-                </td>
+                <td>createrole</td>
                 <td>
                     <span >creates a role based on values given (!!requires 'Rue brick' role!!)</span>
                 </td>
@@ -273,6 +288,12 @@
                     <span >removes a created role to a list of roles addable by a user (!!requires 'Rue brick' role!!)</span>
                 </td>
             </tr>
+          <tr>
+                <td>impersonate &lt;@user&gt; &lt;text for mentioned person to say&gt;</td>
+                <td>
+                    <span >this one came to me in a dream</span>
+                </td>
+            </tr>
             <tr>
                 <td>halloween</td>
                 <td>
@@ -296,18 +317,20 @@
                 </td>
             </tr>
             <tr>
-                <td>tweet</td>
+                <td>tweet &lt;tweet&gt;</td>
                 <td>
-                    <span >it sends a tweet from the account </span>
+                    <span >it sends a tweet from the account</span>
                     <a title="https://twitter.com/jamiebottweets1" href="https://twitter.com/jamiebottweets1"
                         target="_blank" rel="noreferrer noopener" >https://twitter.com/jamiebottweets1</a>
-                    <span >. why? i actual have no fucking idea lol (only works in a specific server, sorry about that)</span>
+                    <span>. why? i actual have no fucking idea lol (only works in a specific server, sorry about that)</span>
                 </td>
             </tr>
             <tr>
                 <td>jack</td>
                 <td>idk</td>
             </tr>
+            
+          
             <tr>
                 <td>test</td>
                 <td>beep boop</td>
@@ -361,11 +384,122 @@
                 </td>
             </tr>
             <tr>
-                <td>sbubbby</td>
+                <td>sbubby</td>
                 <td>
-                    <span >eef freef</span>
+                    <span >eef freef (gets a sbubby from /r/sbubby)</span>
                 </td>
             </tr>
+          <tr>
+                <td>aww</td>
+                <td>
+                    <span >gets a cute from the r/aww subreddit</span>
+                </td>
+            </tr>
+          <tr>
+                <td>porncomments</td>
+                <td>
+                    <span >gets a heckin funny from the r/pornhubcomments subreddit. (CAUTION: WET)</span>
+                </td>
+            </tr>
+          <tr>
+                <td>franklin</td>
+                <td>
+                    <span >gets a franklin story from /r/franklinstories</span>
+                </td>
+            </tr>
+          <tr>
+                <td>franklinmeme &lt;book cover (1-7)&gt; &lt;what ever you want to say&gt;</td>
+                <td>
+                    <span >makes a franklin meme. its a bit funny, the text size doesnt scale that well but you know, it exists none the less. <a href="http://myywebsite.glitch.me/html/franklinimgs.html">(covers can be found here.</a> THANK YOU VERY MUCH KELSEY xx)</span>
+                </td>
+            </tr>
+          <tr>
+                <td>isthis? &lt;;bottom question text;&gt; &lt;;person asking question;&gt; &lt;;object above hand;&gt;</td>
+                <td>
+                    <span >so yeah its pretty easy i think. MAKE SURE YOU LEAVE THE SEMI COLONS IN THERE. ALSO, DO NOT ADD TEXT CONTAINING A SEMI COLON.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>smile &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>smile2  &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>hot &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>old &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>young &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>female2 &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>female &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>male &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>pan &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>hitman &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>hollywood &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>heisenberg &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>impression &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>lion &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>goatee &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>hipster &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>bangs &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>glasses &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>wave &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+            <tr>
+                <td>makeup &lt;url&gt;</td>
+                <td>idk</td>
+            </tr>
+          
             <tr>
                 <td>bentley</td>
                 <td>sends a picture of the devs friends dog</td>
@@ -388,10 +522,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    <span >meme &lt;can be left blank or use a search term&gt;</span>
-                    <br>
-                </td>
+                <td>meme &lt;can be left blank or use a search term&gt;</td>
                 <td>
                     <span >gets a meme but yet again another shit api</span>
                 </td>
@@ -415,6 +546,10 @@
             <tr>
                 <td>@jamie#6832 prefix</td>
                 <td>gives the servers current prefix</td>
+            </tr>
+          <tr>
+                <td>@jamie#6832 prefixreset</td>
+                <td>reset the prefix to the default. ("`")</td>
             </tr>
             <tr>
                 <td>allservermessage</td>
@@ -440,7 +575,7 @@
             </div>
 
             <div class="w3-container w3-theme-l1">
-                <p>Powered by Glitch but also w3.css</a>
+                <p>Powered by Glitch but also w3.css
                 </p>
             </div>
         </footer>
@@ -471,6 +606,40 @@
             mySidebar.style.display = "none";
             overlayBg.style.display = "none";
         }
+      
+      
+      
+      
+    var urlParam = function(name, w){
+    w = w || window;
+    var rx = new RegExp('[\&|\?]'+name+'=([^\&\#]+)'),
+        val = w.location.search.match(rx);
+    return !val ? '':val[1];
+    }
+    
+    var serverName = decodeURI(urlParam('servername'));
+       var serverPrefix = decodeURI(urlParam('prefix'));
+      
+      if (serverName==""&&serverPrefix==""){
+        serverName="No server name given";
+        serverPrefix="`";
+
+      }
+      
+      
+      
+      document.getElementById("serverTitle").innerHTML = "Commands for the server '"+serverName+"', with the prefix '"+serverPrefix+"'";
+      var commands = [];
+      $('tr td').each(function(i)
+{
+   commands.push($(this)); // This is your rel value
+});
+      for (var i = 0;i<commands.length;i++){
+        if (i==0||i%2==0){
+          $(commands[i]).prepend(serverPrefix);
+        }
+      }
+
     </script>
 
 </body>
